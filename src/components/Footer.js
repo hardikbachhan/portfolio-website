@@ -1,4 +1,5 @@
 import React from "react";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
 function Footer() {
 
@@ -55,7 +56,7 @@ function Footer() {
                     className="form-control"
                     placeholder="Email address"
                   />
-                  <button className="btn btn-primary" type="button">
+                  <button className="btn btn-dark" type="button">
                     Subscribe
                   </button>
                 </div>

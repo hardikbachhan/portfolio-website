@@ -1,19 +1,48 @@
 body {
-    background-color :#ECECEC;
+  background-color: #ececec;
 }
 .page-body {
-    position: relative;
-    min-height: 100vh;
-    padding-bottom: 5rem;    /* Footer height */
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 5rem; /* Footer height */
+}
+
+.resume-margin {
+  margin-left: 25%;
+  margin-bottom: 3rem;
+}
+
+.button {
+  border: none;
+  padding: 18px 70px;
+  margin: 20px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 1.5s;
+}
+
+.btn2 {
+  background: linear-gradient(to left, #525657, #d8e1e4, #525657);
+  background-size: 200%;
+}
+
+.button:hover {
+  background-position: right;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #fff;
+    text-decoration: none;
   }
-  
-  #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
-  }
-  
-  #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 5rem;            /* Footer height */
-  }
+
+#content-wrap {
+  padding-bottom: 2.5rem; /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem; /* Footer height */
+}
