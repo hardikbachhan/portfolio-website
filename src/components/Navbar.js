@@ -1,12 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar(props) {
+
+    const handleClick = (e) => {
+        props.setProgress(60);
+        setTimeout(() => {
+            props.setProgress(100);
+        }, 500);
+    }
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand" to="/" onClick={handleClick}>
             Hardik Bachhan
           </Link>
           <button
@@ -22,10 +30,13 @@ function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <Link className="nav-link" to="/projects">
+              <Link className="nav-link" to="/projects" onClick={handleClick}>
                 Projects
               </Link>
-              <Link className="nav-link" to="/resume">
+              <Link className="nav-link" to="/experience" onClick={handleClick}>
+                Experiences
+              </Link>
+              <Link className="nav-link" to="/resume" onClick={handleClick}>
                 Resume
               </Link>
             </div>

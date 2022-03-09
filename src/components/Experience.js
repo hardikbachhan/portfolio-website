@@ -1,27 +1,27 @@
 import React from "react";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { ReactComponent as ProjectIcon } from "../public/icons/project.svg";
+import { ReactComponent as SchoolIcon } from "../public/icons/school.svg";
 
 import timelineElements from "../public/data/db.js";
 
-function Projects() {
+function Experience() {
 
-    const projectIconStyles = {
-        background: "#BAABDA"    // #F9c74f
+    const schoolIconStyles = {
+        background: "#FF5C8D"    // #F9c74f
     }
 
     return (
-        <div className="" style={{backgroundColor: "#D9D7F1"}}>
+        <div className="" style={{backgroundColor: "#FFC0D3"}}>
             <VerticalTimeline>
-                {timelineElements.projects.map((element) => {
+                {timelineElements.work.map((element) => {
                     return (
                         <VerticalTimelineElement
                             key={element.id}
                             date={element.date}
                             dateClassName="date"
-                            iconStyle={projectIconStyles}
-                            icon={<ProjectIcon />}
+                            iconStyle={schoolIconStyles}
+                            icon={<SchoolIcon />}
                         >
                             <h3 className="vertical-timeline-element-title timeline-card-heading">
                                 {element.title}    
@@ -32,7 +32,7 @@ function Projects() {
                             <p id="description" >
                                 {element.description}    
                             </p>
-                            <a className={"timeline-button project-button"} href={element.websiteLink}>{element.buttonText}</a>
+                            <a className={"timeline-button experience-button"} href={element.websiteLink}>{element.buttonText}</a>
                         </VerticalTimelineElement>
                     )
                 })}
@@ -41,4 +41,4 @@ function Projects() {
     );
 }
 
-export default Projects;
+export default Experience;

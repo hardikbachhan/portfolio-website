@@ -1,6 +1,60 @@
 body {
   background-color: #ececec;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: rgb(59, 59, 59);
 }
+
+.timeline-card-heading {
+  padding-top: 0.25rem;
+}
+
+.vertical-timeline-element-content {
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25),
+    0 0.4em 1.25em 0 rgba(0, 0, 0, 0.15) !important;
+  padding: 2em 3em !important;
+}
+
+.date {
+  color: rgb(61, 65, 65);
+}
+
+#description {
+  margin: 1.5em 0 2em 0;
+}
+
+.timeline-button {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color: white;
+}
+
+.project-button {
+  background-color: #baabda;
+}
+
+.project-button:hover {
+  background-color: #8f7eb4;
+}
+
+.experience-button {
+  background-color: #FF5C8D;
+}
+
+.experience-button:hover {
+  background-color: #ff3874;
+}
+
+@media only screen and (max-width: 1700px) {
+  .vertical-timeline-element-date {
+    display: block !important;
+    float: none !important;
+    color: rgb(44, 44, 44);
+    margin-top: 1.5em;
+  }
+}
+
 .page-body {
   position: relative;
   min-height: 100vh;
@@ -31,10 +85,13 @@ body {
   background-position: right;
 }
 
-a:link, a:visited, a:hover, a:active {
-    color: #fff;
-    text-decoration: none;
-  }
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #fff;
+  text-decoration: none;
+}
 
 #content-wrap {
   padding-bottom: 2.5rem; /* Footer height */

@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { useMediaQuery } from 'react-responsive'
 import mcleodganj_sunset from "../public/images/mcleodganj_sunset.jpg";
 import nature from "../public/images/nature.jpg";
-import home_background from "../public/images/home_background.jpg";
-import landscape from "../public/images/landscape.jpg";
+import tea_garden from "../public/images/tea_garden.jpg";
+import cliffs from "../public/images/cliffs.jpg";
 
 function Home() {
+
     const myImgStyle = {
         height: "100vh",
         width: "100%",
@@ -13,16 +15,25 @@ function Home() {
     const myTextStyle = {
         fontSize: "2.4rem",
         textAlign: "right",
-        top: "25%"
+        top: "28%"
     }
 
-  return (
-    <div>
-        <img style={myImgStyle} src={nature} alt={home_background} />
-        <p class="carousel-caption pb-3" style={myTextStyle}>Hi there, I am </p> <br />
-        <p class="carousel-caption" style={{...myTextStyle, "fontSize": "4.2rem", top: "32%"}}>Hardik Bachhan</p>
-    </div>
-  )
+
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+    const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
+
+
+    return (
+        <div>
+            {isTabletOrMobile || isPortrait ?  <><img style={myImgStyle} src={tea_garden} alt={cliffs} />
+            <p className="carousel-caption pb-3" style={{...myTextStyle, top: "65%"}}>Hi there, I am </p> <br />
+            <p className="carousel-caption" style={{ ...myTextStyle, "fontSize": "3rem", top: "73%" }}>Hardik Bachhan</p></>
+            : 
+            <><img style={myImgStyle} src={mcleodganj_sunset} alt={nature} />
+            <p className="carousel-caption pb-3" style={myTextStyle}>Hi there, I am </p> <br />
+            <p className="carousel-caption" style={{ ...myTextStyle, "fontSize": "4.2rem", top: "35%" }}>Hardik Bachhan</p></>}
+        </div>
+    )
 }
 
 export default Home
