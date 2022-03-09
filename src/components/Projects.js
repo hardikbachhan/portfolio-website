@@ -12,7 +12,7 @@ function Projects() {
     }
 
     return (
-        <div className="" style={{backgroundColor: "#D9D7F1"}}>
+        <div className="" style={{ backgroundColor: "#D9D7F1" }}>
             <VerticalTimeline>
                 {timelineElements.projects.map((element) => {
                     return (
@@ -24,13 +24,13 @@ function Projects() {
                             icon={<ProjectIcon />}
                         >
                             <h3 className="vertical-timeline-element-title timeline-card-heading">
-                                {element.title}    
+                                {element.title}
                             </h3>
                             <h6 className="vertical-timeline-element-subtitle">
-                                {element.category}    
+                                {element.category}
                             </h6>
                             <p id="description" >
-                                {element.description}    
+                                {element.description}
                             </p>
                             <a className={"timeline-button project-button"} href={element.websiteLink}>{element.buttonText}</a>
                         </VerticalTimelineElement>

@@ -25,13 +25,13 @@ function Home() {
 
     return (
         <div>
-            {isTabletOrMobile || isPortrait ?  <><img style={myImgStyle} src={tea_garden} alt={cliffs} />
-            <p className="carousel-caption pb-3" style={{...myTextStyle, top: "65%"}}>Hi there, I am </p> <br />
-            <p className="carousel-caption" style={{ ...myTextStyle, "fontSize": "3rem", top: "73%" }}>Hardik Bachhan</p></>
-            : 
-            <><img style={myImgStyle} src={mcleodganj_sunset} alt={nature} />
-            <p className="carousel-caption pb-3" style={myTextStyle}>Hi there, I am </p> <br />
-            <p className="carousel-caption" style={{ ...myTextStyle, "fontSize": "4.2rem", top: "35%" }}>Hardik Bachhan</p></>}
+            {isTabletOrMobile || isPortrait ? <><img style={myImgStyle} src={tea_garden} alt={cliffs} />
+                <p className="carousel-caption pb-3" style={{ ...myTextStyle, top: "65%" }}>Hi there, I am </p> <br />
+                <p className="carousel-caption" style={{ ...myTextStyle, "fontSize": "3rem", top: "73%" }}>Hardik Bachhan</p></>
+                :
+                <><img style={myImgStyle} src={mcleodganj_sunset} alt={nature} />
+                    <p className="carousel-caption pb-3" style={myTextStyle}>Hi there, I am </p> <br />
+                    <p className="carousel-caption" style={{ ...myTextStyle, "fontSize": "4.2rem", top: "35%" }}>Hardik Bachhan</p></>}
         </div>
     )
 }

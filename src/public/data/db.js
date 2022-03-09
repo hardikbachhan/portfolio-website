@@ -70,7 +70,7 @@ const timelineElements = {
             date: "December, 2019 - January, 2020",
             icon: "project"
         }
-    ], 
+    ],
     work: [
         {
             id: 1,

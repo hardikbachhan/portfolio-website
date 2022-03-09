@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import data from "../config";
 
 function Resume() {
 
-    const RESUME_URL =
-        "./Hardik Bachhan CV.pdf";
-
+    // eslint-disable-next-line
     const [numPages, setNumPages] = useState(null);
+    // eslint-disable-next-line
     const [pageNumber, setPageNumber] = useState(1);
 
     const onDocumentLoadSuccess = ({ numPages }) => {
@@ -16,13 +16,13 @@ function Resume() {
     const myStyle = {
         display: "block",
         padding: "0 0",
-        margin: "2% 0 0 10%",
+        margin: "2% 0 0 6%",
         textAlign: "center"
     }
 
     return (
         <div className="container" style={myStyle}>
-            <Document file={RESUME_URL} onLoadSuccess={onDocumentLoadSuccess}>
+            <Document file={data.RESUME_URL} onLoadSuccess={onDocumentLoadSuccess}>
                 <Page className={"resume-margin"} renderAnnotationLayer={false} pageNumber={pageNumber} />
             </Document>
             {/* <p>

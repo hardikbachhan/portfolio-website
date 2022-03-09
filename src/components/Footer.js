@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import data from "../config";
 
 import emailjs from "emailjs-com";
@@ -180,7 +180,7 @@ const Footer = () => {
                         <ul className="list-unstyled d-flex">
                             <li className="ms-6 mx-4">
                                 <a
-                                    style={{"color": "#595260"}}
+                                    style={{ "color": "#595260" }}
                                     href="https://www.linkedin.com/in/hardikbachhan/"
                                 >
                                     <i className="fab fa-2x fa-brands fa-linkedin-in" ></i>
@@ -188,7 +188,7 @@ const Footer = () => {
                             </li>
                             <li className="ms-3 mx-4">
                                 <a
-                                    style={{"color": "#595260"}}
+                                    style={{ "color": "#595260" }}
                                     href="https://github.com/hardikbachhan/"
                                 >
                                     <i className="fab fa-2x fa-brands fa-github"></i>

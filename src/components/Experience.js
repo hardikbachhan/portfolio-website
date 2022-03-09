@@ -12,7 +12,7 @@ function Experience() {
     }
 
     return (
-        <div className="" style={{backgroundColor: "#FFC0D3"}}>
+        <div className="" style={{ backgroundColor: "#FFC0D3" }}>
             <VerticalTimeline>
                 {timelineElements.work.map((element) => {
                     return (
@@ -24,13 +24,13 @@ function Experience() {
                             icon={<SchoolIcon />}
                         >
                             <h3 className="vertical-timeline-element-title timeline-card-heading">
-                                {element.title}    
+                                {element.title}
                             </h3>
                             <h6 className="vertical-timeline-element-subtitle">
-                                {element.category}    
+                                {element.category}
                             </h6>
                             <p id="description" >
-                                {element.description}    
+                                {element.description}
                             </p>
                             <a className={"timeline-button experience-button"} href={element.websiteLink}>{element.buttonText}</a>
                         </VerticalTimelineElement>
