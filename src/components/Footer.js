@@ -1,66 +1,92 @@
-import React from "react";
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import React, { useState } from "react";
+import GoogleMapReact from "google-map-react";
+import data from "../config";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
 
-    const currentYear = new Date().getFullYear();
+  const AnyReactComponent = () => (
+    <i className="fas fa-solid fa-location-dot"></i>
+  );
+  const defaultProps = {
+    center: {
+      lat: 28.65174029065706,
+      lng: 77.18536968358251,
+    },
+    zoom: 11,
+  };
+
+  const [formDetails, setFormDetails] = useState({email: "", comment: ""});
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+      setFormDetails({...formDetails, [e.target.name]: e.target.value});
+  }
+
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      // logic to send details to mail
+
+      setIsFormSubmitted(true);
+      setTimeout(() => {
+          setIsFormSubmitted(false)
+      }, 3000);
+
+  } 
 
   return (
     <div>
-      <div className="px-5 footer bg-light text-black">  
+      <div className="px-5 footer bg-light text-black">
         <footer className="pt-5">
-          <div className="row">
-
-            <div className="col-2">
-              <h5>Section</h5>
-              <ul className="nav flex-column">
-                <li className="nav-item mb-2">
-                  <a href="#" className="nav-link p-0 text-muted">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item mb-2">
-                  <a href="#" className="nav-link p-0 text-muted">
-                    Features
-                  </a>
-                </li>
-                <li className="nav-item mb-2">
-                  <a href="#" className="nav-link p-0 text-muted">
-                    Pricing
-                  </a>
-                </li>
-                <li className="nav-item mb-2">
-                  <a href="#" className="nav-link p-0 text-muted">
-                    FAQs
-                  </a>
-                </li>
-                <li className="nav-item mb-2">
-                  <a href="#" className="nav-link p-0 text-muted">
-                    About
-                  </a>
-                </li>
-              </ul>
+          <div className="row" style={{height: "100%"}}>
+            <div className="col-lg-4 mb-5">
+              <div style={{ height: "50vh", width: "100%" }}>
+                <GoogleMapReact
+                  bootstrapURLKeys={{ key: data.GOOGLE_MAPS_API }}
+                  defaultCenter={defaultProps.center}
+                  defaultZoom={defaultProps.zoom}
+                >
+                  <AnyReactComponent
+                    lat={28.65174029065706}
+                    lng={77.18536968358251}
+                  />
+                </GoogleMapReact>
+              </div>
             </div>
 
             <div className="col offset-1">
-              <form>
-                <h5>Subscribe to our newsletter</h5>
-                <p>Monthly digest of whats new and exciting from us.</p>
-                <div className="d-flex w-100 gap-2">
-                  <label htmlFor="newsletter1" className="visually-hidden">
-                    Email address
-                  </label>
+              <form onSubmit={handleSubmit}>
+                <div className="form-group my-3">
+                  <label htmlFor="email">Email address</label>
                   <input
-                    id="newsletter1"
-                    type="text"
-                    className="form-control"
-                    placeholder="Email address"
+                    type="email"
+                    className="form-control my-2"
+                    id="email"
+                    aria-describedby="emailHelp"
+                    name="email"
+                    value={formDetails.title}
+                    onChange={handleChange}
                   />
-                  <button className="btn btn-dark" type="button">
-                    Subscribe
-                  </button>
+                  <small id="emailHelp" className="form-text text-muted">
+                    We'll never share your email with anyone else.
+                  </small>
                 </div>
+                <div className="form-group">
+                  <label htmlFor="text">Comment</label>
+                  <input
+                    type="text"
+                    className="form-control my-2"
+                    id="text"
+                    name="comment"
+                    value={formDetails.comment}
+                    onChange={handleChange}
+                  />
+                </div>
+                <button type="submit" className="btn btn-dark my-2">
+                  Submit
+                </button>
               </form>
+              {isFormSubmitted && <p>Thanks for Responding, will reply ASAP!!!</p> }
             </div>
           </div>
 

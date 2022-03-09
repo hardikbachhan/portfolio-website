@@ -11,7 +11,7 @@ function App() {
     return (
         <>
             <Navbar />
-            <div className="container page-body">
+            <div className="page-body" style={{"padding-bottom": "0"}}>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="resume" element={<Resume />} />
