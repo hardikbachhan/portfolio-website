@@ -28,7 +28,7 @@ function Resume() {
             {/* <p>
                 Page {pageNumber} of {numPages}
             </p> */}
-            <button type="button" className="button btn2" > <a href="https://drive.google.com/file/d/1Hxjqaz28djyDnonQBQN9i7F8uMJ6txzZ/view?usp=sharing">Have to quick look...</a> </button>
+            <button type="button" className="button btn2" > <a href="https://drive.google.com/file/d/1Hxjqaz28djyDnonQBQN9i7F8uMJ6txzZ/view?usp=sharing">Download PDF</a> </button>
         </div>
     );
 }
