@@ -127,9 +127,6 @@ const Footer = () => {
                                         value={formDetails.name}
                                         onChange={handleChange}
                                     />
-                                    <small id="emailHelp" className="form-text text-muted">
-                                        We'll never share your email with anyone else.
-                                    </small>
                                 </div>
                                 <div className="form-group my-3">
                                     <label htmlFor="email">Email address</label>
